@@ -1,6 +1,7 @@
 //import { Inter } from "next/font/google";
 
 import { Metadata } from "next";
+import PageLayout from "./components/PageLayout";
 
 //const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <PageLayout>{children}</PageLayout>
+      </body>
     </html>
   );
 }

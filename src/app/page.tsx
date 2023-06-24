@@ -7,13 +7,12 @@ import "./globals.css";
 
 export default function Page() {
   return (
-    <main>
-      <div className="ticket-content">
-        <FiltersContainer />
-        <TicketContainer />
-      </div>
-      <Header />
-      <Footer />
-    </main>
+    // <main className="ticket-content-container">
+    // <div className="ticket-content">
+    //   <FiltersContainer />
+    //   <TicketContainer />
+    // </div>
+    // </main>
+    "hello"
   );
 }

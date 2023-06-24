@@ -1,10 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import styles from "./Header.module.css";
 
 export function Header({ children }: { children?: string }) {
   return (
-    <header>
-      <Link href="/" className="header-title">
+    <header className={styles.header}>
+      <Link href="/" className={styles.headerTitle}>
         Билетопоиск
       </Link>
       <Link href="/basket">
