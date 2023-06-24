@@ -1,6 +1,8 @@
 :root {
   --gray-1: #333;
   --header-height: 84px;
+  --layout-layer: 1;
+  --popup-layer: 10;
 }
 
 * {
@@ -25,25 +27,6 @@ body {
 
   font-family: "Roboto";
 }
-/* 
-main {
-  height: 100%;
-} */
-
-/* header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  position: fixed;
-  width: 100%;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-
-  background: #333333;
-} */
 
 .footer {
   display: flex;

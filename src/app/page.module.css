@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.filters {
+  width: 408px;
+  max-height: calc(100vh - var(--header-height) - 2 * 24px);
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+}

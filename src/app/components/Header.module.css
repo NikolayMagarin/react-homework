@@ -13,6 +13,8 @@
   padding: 0 32px;
 
   background: var(--gray-1, #333);
+
+  z-index: var(--layout-layer);
 }
 
 .headerTitle {

@@ -1,18 +1,23 @@
 // import Image from "next/image";
-import FiltersContainer from "./components/FiltersContainer";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import Filters from "./components/Filters";
 import TicketContainer from "./components/TicketContainer";
-import "./globals.css";
+
+import styles from "./page.module.css";
 
 export default function Page() {
   return (
     // <main className="ticket-content-container">
-    // <div className="ticket-content">
-    //   <FiltersContainer />
-    //   <TicketContainer />
-    // </div>
+    //   <div className="ticket-content">
+    //     <FiltersContainer />
+    //     <TicketContainer />
+    //   </div>
     // </main>
-    "hello"
+
+    <div className={styles.content}>
+      <aside className={styles.filters}>
+        <Filters />
+      </aside>
+      <TicketContainer />
+    </div>
   );
 }

@@ -1,9 +1,7 @@
-//import { Inter } from "next/font/google";
-
 import { Metadata } from "next";
 import PageLayout from "./components/PageLayout";
 
-//const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Билетопоиск",
