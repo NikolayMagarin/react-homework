@@ -1,3 +1,5 @@
+import styles from "./Filters.module.css";
+
 export default function Filters() {
-  return <div className="filters">{/*  */}</div>;
+  return <div className={styles.filters}>{/*  */}</div>;
 }

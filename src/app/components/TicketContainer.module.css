@@ -1,0 +1,7 @@
+.ticketContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding-left: 23px;
+}

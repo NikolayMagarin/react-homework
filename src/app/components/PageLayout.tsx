@@ -9,7 +9,7 @@ export default function PageLayout({
 }) {
   return (
     <div className={styles.container}>
-      <Header />
+      <Header goodsAmount={10} />
       <main className={styles.content}>{children}</main>
       <Footer />
     </div>

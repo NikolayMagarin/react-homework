@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+}
+
+.button {
+  width: 16px;
+  height: 16px;
+
+  display: inline-flex;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+}
+
+.button.active {
+  background: var(--orange, #f50);
+}
+
+.button.disabled {
+  background: var(--orange-disabled, #ffa375);
+}
+
+.button.active:hover {
+  background: var(--orange-hover);
+
+  cursor: pointer;
+}
+
+.ticketCount {
+  color: var(--text-primary, #1b1f23);
+  font-size: 20px;
+  /* font-family: SF Pro Text; */
+  font-weight: 600;
+  line-height: 20px;
+
+  margin: 0 8px;
+}

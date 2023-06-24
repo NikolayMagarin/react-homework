@@ -1,8 +1,15 @@
-export function Footer({ children }: { children?: string }) {
+import Link from "next/link";
+import styles from "./Footer.module.css";
+
+export function Footer() {
   return (
-    <footer className="footer">
-      <a className="footer-text left">Вопросы-ответы</a>
-      <a className="footer-text right">О нас</a>
+    <footer className={styles.footer}>
+      <Link className={`${styles.footerText} ${styles.left}`} href={"/"}>
+        Вопросы-ответы
+      </Link>
+      <Link className={`${styles.footerText} ${styles.right}`} href={"/"}>
+        О нас
+      </Link>
     </footer>
   );
 }

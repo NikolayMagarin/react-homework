@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  background: #333333;
+}
+
+.footerText {
+  margin: 24px 32px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.footerText .left {
+  left: 24px;
+}
+
+.footerText .right {
+  right: 24px;
+}
