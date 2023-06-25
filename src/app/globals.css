@@ -8,16 +8,16 @@
   --text-primary: #1b1f23;
 
   --white: #fff;
+
   --orange: #f50;
   --orange-hover: #e94e00;
   --orange-disabled: #ffa375;
 
   --border-default: #e1e3e6;
+  --border-hover: #c4c6c9;
   --background-primary: #fff;
   --text-tertiary: #999fa6;
-  --text-primary: #1b1f23;
-  --orange: #f50;
-  --orange--background: rgba(255, 85, 0, 0.4);
+  --orange--background: rgba(238, 187, 162, 0.4);
 
   --gray-5: #e0e0e0;
 }

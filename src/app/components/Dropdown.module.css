@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+.button:hover {
+  border-color: var(--border-hover);
+}
+
 .text {
   flex: 1;
   text-align: start;

@@ -38,6 +38,7 @@ function Popup({
     };
 
     document.body.addEventListener("click", cb);
+    document.body.addEventListener("scroll", onClose);
     return () => {
       document.body.removeEventListener("click", cb);
     };
@@ -166,7 +167,7 @@ export default function Dropdown({
         aria-expanded={active}
         aria-haspopup="listbox"
         ref={ref}
-        data-click-outside-ignore="true"
+        data-click-outside-ignore={active}
       >
         <span
           className={cn(styles.text, { [styles.placeholder]: !selectedOption })}

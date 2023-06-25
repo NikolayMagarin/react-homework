@@ -1,10 +1,16 @@
 import TicketCard from "./TicketCard";
 import styles from "./TicketContainer.module.css";
 
-export default function TicketContainer({ basket }: { basket?: boolean }) {
+export default function TicketContainer({
+  basket,
+  filmIds,
+}: {
+  basket?: boolean;
+  filmIds?: string[];
+}) {
   return (
     <div className={styles.ticketContainer}>
-      {new Array(5)
+      {new Array(30)
         .fill(0)
         .map((_, i) => i)
         .map((i) => (
