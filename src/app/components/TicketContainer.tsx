@@ -1,18 +1,18 @@
 import TicketCard from "./TicketCard";
 import styles from "./TicketContainer.module.css";
 
-export default function TicketContainer() {
+export default function TicketContainer({ basket }: { basket?: boolean }) {
   return (
     <div className={styles.ticketContainer}>
-      {new Array(4)
+      {new Array(5)
         .fill(0)
         .map((_, i) => i)
         .map((i) => (
           <TicketCard
             key={i}
-            filmId={"*Тут уникальные айдишники полученные сервера*"}
+            filmId={"2aT976Fs_Bek0e2ZR_05V"}
             data={{
-              poster: "https://i.postimg.cc/pdCLNMqX/1.webp",
+              posterUrl: "https://i.postimg.cc/pdCLNMqX/1.webp",
               title: "Властелин колец: Братство кольца",
               description: [
                 ["genre", "Фэнтези"],
@@ -20,6 +20,7 @@ export default function TicketContainer() {
                 ["decriptionline1", "И ещё какая-то информация"],
               ],
             }}
+            basket={basket}
           />
         ))}
     </div>

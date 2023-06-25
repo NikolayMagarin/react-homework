@@ -5,19 +5,22 @@ import styles from "./TicketCard.module.css";
 
 export default function TicketCard({
   data,
+  filmId,
+  basket,
 }: {
   filmId: string;
   data: {
-    poster: string;
+    posterUrl: string;
     title: string;
     description: [string, string][];
   };
+  basket?: boolean;
 }) {
   return (
     <div className={styles.ticketCard}>
       <Image
         className={styles["film-poster-small"]}
-        src={data.poster}
+        src={data.posterUrl}
         alt="Film poster"
         width={92}
         height={128}
@@ -25,7 +28,7 @@ export default function TicketCard({
 
       <div className={styles.filmData}>
         <div>
-          <Link className={styles.filmTitle} href={"./movie?..."}>
+          <Link className={styles.filmTitle} href={`./movie/${filmId}`}>
             {data.title}
           </Link>
         </div>
@@ -36,7 +39,7 @@ export default function TicketCard({
         </div>
       </div>
 
-      <TicketButtons />
+      <TicketButtons basket={basket} />
     </div>
   );
 }

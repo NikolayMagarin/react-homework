@@ -27,3 +27,19 @@
 
   text-decoration: none;
 }
+
+.goodsCounter {
+  display: flex;
+  width: 28px;
+  height: 28px;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  background: var(--orange, #f50);
+
+  color: var(--white, #fff);
+  font-size: 14px;
+  font-family: "Roboto";
+}

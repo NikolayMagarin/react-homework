@@ -9,17 +9,14 @@ export function Header({ goodsAmount }: { goodsAmount: number }) {
         Билетопоиск
       </Link>
 
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         {goodsAmount > 0 && (
-          <div style={{ color: "#fff", display: "flex", alignItems: "center" }}>
-            {goodsAmount}
-          </div>
+          <div className={styles.goodsCounter}>{goodsAmount}</div>
         )}
 
         <Link href="/basket">
           <svg
-            id="basket"
-            width="32"
+            width="28"
             viewBox="0 0 28 25"
             fill="#ffffff"
             xmlns="http://www.w3.org/2000/svg"

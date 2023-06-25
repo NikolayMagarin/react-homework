@@ -1,0 +1,52 @@
+.reviewCard {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+
+  padding: 24px;
+  gap: 32px;
+
+  border-radius: 8px;
+  background: var(--white, #fff);
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 8px;
+
+  background: var(--gray-5, #e0e0e0);
+}
+
+.reviewContent {
+  color: var(--text-primary, #1b1f23);
+  font-size: 20px;
+  line-height: 32px;
+
+  flex: 1;
+}
+
+.rating {
+  display: flex;
+  gap: 8px;
+}
+
+.title {
+  display: flex;
+}
+
+.name {
+  flex: 1;
+}
+
+.text {
+  color: var(--text-primary, #1b1f23);
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 16px;
+}

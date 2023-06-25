@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { useState } from "react";
 import styles from "./TicketButtons.module.css";
 
-export default function TicketButtons() {
+export default function TicketButtons({ basket }: { basket?: boolean }) {
   const [amount, setAmount] = useState(() => 0);
 
   return (

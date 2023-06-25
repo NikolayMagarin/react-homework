@@ -1,6 +1,8 @@
 .content {
   display: flex;
   flex: 1;
+
+  gap: 24px;
 }
 
 .filters {

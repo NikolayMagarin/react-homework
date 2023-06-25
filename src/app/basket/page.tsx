@@ -1,6 +1,5 @@
-import { Header } from "../components/Header";
-import "../globals.css";
+import TicketContainer from "../components/TicketContainer";
 
 export default function Page() {
-  return <main>bbbbbasket</main>;
+  return <TicketContainer basket={true} />;
 }
