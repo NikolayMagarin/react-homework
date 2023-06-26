@@ -1,29 +1,42 @@
+"use client";
+
+import { genreRU } from "../utils/genreRU";
 import TicketCard from "./TicketCard";
 import styles from "./TicketContainer.module.css";
 
 export default function TicketContainer({
   basket,
-  filmIds,
+  films,
 }: {
   basket?: boolean;
-  filmIds?: string[];
+  films: {
+    title: string;
+    posterUrl: string;
+    releaseYear: number;
+    description: string;
+    genre: string;
+    id: string;
+    rating: number;
+    director: string;
+    reviewIds: string[];
+  }[];
 }) {
+  // const films = await (await fetch("http://localhost:3001/api/movies")).json();
+
   return (
     <div className={styles.ticketContainer}>
-      {new Array(30)
-        .fill(0)
-        .map((_, i) => i)
-        .map((i) => (
+      {!!films &&
+        films.map(({ title, posterUrl, id, genre }) => (
           <TicketCard
-            key={i}
-            filmId={"2aT976Fs_Bek0e2ZR_05V"}
+            key={id}
+            filmId={id}
             data={{
-              posterUrl: "https://i.postimg.cc/pdCLNMqX/1.webp",
-              title: "Властелин колец: Братство кольца",
+              posterUrl: posterUrl,
+              title: title,
               description: [
-                ["genre", "Фэнтези"],
-                ["decriptionline0", "Что-то ещё"],
-                ["decriptionline1", "И ещё какая-то информация"],
+                ["genre", genreRU[genre]],
+                // ["decriptionline0", "Что-то ещё"],
+                // ["decriptionline1", "И ещё какая-то информация"],
               ],
             }}
             basket={basket}

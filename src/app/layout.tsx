@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import PageLayout from "./components/PageLayout";
 
 import "./globals.css";
+import StoreProvider from "./store/StoreProvider";
 
 export const metadata: Metadata = {
   title: "Билетопоиск",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <PageLayout>{children}</PageLayout>
+        <StoreProvider>
+          <PageLayout>{children}</PageLayout>
+        </StoreProvider>
       </body>
     </html>
   );
