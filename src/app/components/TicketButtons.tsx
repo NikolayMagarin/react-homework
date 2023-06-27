@@ -1,22 +1,52 @@
 "use client";
 
 import classNames from "classnames";
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { CartSlice, selectCart } from "../store/features/cart";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./TicketButtons.module.css";
+import { useDialog } from "../basket/components/Dialog";
 
-export default function TicketButtons({ basket }: { basket?: boolean }) {
-  const [amount, setAmount] = useState(() => 0);
+export default function TicketButtons({
+  basket,
+  filmId,
+}: {
+  basket?: boolean;
+  filmId: string;
+}) {
+  const cardState = useSelector((state) => selectCart(state)[filmId]) || 0;
+
+  const dispatch = useDispatch();
+
+  const [modal, showModal] = useDialog();
+  const [result, setResult] = useState("");
 
   return (
     <div className={styles.container}>
       <div>
         <span
           className={classNames(styles.button, {
-            [styles.disabled]: amount == 0,
-            [styles.active]: amount > 0,
+            [styles.disabled]: cardState == 0,
+            [styles.active]: cardState > 0,
           })}
           onClick={() => {
-            amount > 0 && setAmount(amount - 1);
+            if (cardState > 0) {
+              dispatch(
+                CartSlice.actions.changeValue({
+                  movieId: filmId,
+                  d: -1,
+                  preventZero: !!basket,
+                })
+              );
+              showModal({
+                title: "Удаление билета",
+                acceptText: "Да",
+                cancelText: "Нет",
+                onAccept: () => setResult("1"),
+                onCancel: () => setResult("0"),
+                children: "Вы уверены, что хотите удалить билет?",
+              });
+            }
           }}
         >
           <svg
@@ -35,14 +65,17 @@ export default function TicketButtons({ basket }: { basket?: boolean }) {
             </g>
           </svg>
         </span>
-        <span className={styles.ticketCount}>{amount}</span>
+        <span className={styles.ticketCount}>{cardState}</span>
         <span
           className={classNames(styles.button, {
-            [styles.disabled]: amount == 30,
-            [styles.active]: amount < 30,
+            [styles.disabled]: cardState == 30,
+            [styles.active]: cardState < 30,
           })}
           onClick={() => {
-            amount < 30 && setAmount(amount + 1);
+            cardState < 30 &&
+              dispatch(
+                CartSlice.actions.changeValue({ movieId: filmId, d: +1 })
+              );
           }}
         >
           <svg
@@ -65,7 +98,19 @@ export default function TicketButtons({ basket }: { basket?: boolean }) {
 
       {!!basket && (
         <div>
-          <span className={styles.delete} onClick={() => {}}>
+          <span
+            className={styles.delete}
+            onClick={() => {
+              showModal({
+                title: "Удаление билета",
+                acceptText: "Да",
+                cancelText: "Нет",
+                onAccept: () => setResult("1"),
+                onCancel: () => setResult("0"),
+                children: "Вы уверены, что хотите удалить билет?",
+              });
+            }}
+          >
             <svg
               width="20"
               height="20"

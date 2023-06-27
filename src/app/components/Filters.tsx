@@ -1,22 +1,25 @@
 "use client";
 
 import { ChangeEvent, useCallback } from "react";
-import { setFilter } from "../store/features/filters";
 
 import Dropdown from "./Dropdown";
 import styles from "./Filters.module.css";
 
-export default function Filters() {
-  let inputChangeTimeout: NodeJS.Timeout;
-
-  const inputOnChange = useCallback((event: ChangeEvent) => {
-    clearTimeout(inputChangeTimeout);
-
-    setTimeout(() => {
-      setFilter("name", (event.target as HTMLInputElement).value);
-    }, 1000);
-  }, []);
-
+export default function Filters({
+  filters,
+  setFilters,
+}: {
+  filters: { name: string; genre: string; cinema: string };
+  setFilters: ({
+    name,
+    genre,
+    cinema,
+  }: {
+    name: string;
+    genre: string;
+    cinema: string;
+  }) => void;
+}) {
   return (
     <div className={styles.filters}>
       <div className={styles.filtersTitle}>Фильтр поиска</div>
@@ -26,7 +29,13 @@ export default function Filters() {
           type="text"
           className={styles.textInput}
           placeholder="Введите название"
-          onChange={inputOnChange}
+          onChange={(event) => {
+            setFilters({
+              name: (event.target as HTMLInputElement).value,
+              genre: filters.genre,
+              cinema: filters.cinema,
+            });
+          }}
         ></input>
       </div>
 
@@ -34,9 +43,13 @@ export default function Filters() {
         <div className={styles.filterName}>Жанр</div>
         <Dropdown
           placeholder="Выберите жанр"
-          value=""
+          value={filters.genre}
           setValue={(value) => {
-            setFilter("genre", value);
+            setFilters({
+              name: filters.name,
+              genre: value,
+              cinema: filters.cinema,
+            });
           }}
           options={[
             { value: "", content: "Не выбрано" },
@@ -52,9 +65,13 @@ export default function Filters() {
         <div className={styles.filterName}>Кинотеатр</div>
         <Dropdown
           placeholder="Выберите кинотеатр"
-          value=""
+          value={filters.cinema}
           setValue={(value) => {
-            setFilter("cinema", value);
+            setFilters({
+              name: filters.name,
+              genre: filters.genre,
+              cinema: value,
+            });
           }}
           options={[
             { value: "", content: "Не выбрано" },

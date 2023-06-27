@@ -1,8 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { selectCart } from "../store/features/cart";
+import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./Header.module.css";
 
-export function Header({ goodsAmount }: { goodsAmount: number }) {
+export function Header() {
+  const goodsAmount = (
+    Object.values(useSelector((state) => selectCart(state))) as number[]
+  ).reduce((a: number, i: number) => i + a, 0);
+
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.headerTitle}>

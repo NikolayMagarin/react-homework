@@ -21,8 +21,6 @@ export default function TicketContainer({
     reviewIds: string[];
   }[];
 }) {
-  // const films = await (await fetch("http://localhost:3001/api/movies")).json();
-
   return (
     <div className={styles.ticketContainer}>
       {!!films &&
@@ -34,7 +32,7 @@ export default function TicketContainer({
               posterUrl: posterUrl,
               title: title,
               description: [
-                ["genre", genreRU[genre]],
+                ["genre", genreRU[genre] || genre],
                 // ["decriptionline0", "Что-то ещё"],
                 // ["decriptionline1", "И ещё какая-то информация"],
               ],

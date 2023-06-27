@@ -1,4 +1,6 @@
 export const genreRU:{[eng:string]:string} = {
-  "fantasy": "Фэнтези"
-  // ....
+  "fantasy": "Фэнтези",
+  "horror": "Хоррор",
+  "action": "Боевик",
+  "comedy": "Комедия"
 }

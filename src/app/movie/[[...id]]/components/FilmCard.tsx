@@ -32,7 +32,7 @@ export default function FilmCard({
       <div className={styles.filmData}>
         <div style={{ display: "flex" }}>
           <h1 className={styles.filmTitle}>{filmData.title}</h1>
-          <TicketButtons />
+          <TicketButtons filmId={filmData.id} />
         </div>
 
         <div className={styles.aboutData}>

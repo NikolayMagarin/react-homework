@@ -1,0 +1,72 @@
+.backdrop {
+  display: grid;
+  place-items: center;
+
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog {
+  margin: 24px;
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--white, #fff);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-primary, #1b1f23);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.closeBtn {
+  display: block;
+  border: 0;
+  background: transparent;
+  padding: 4px;
+  margin: 0;
+  border-radius: 4px;
+  height: 24px;
+  cursor: pointer;
+}
+.closeBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.closeBtn:active {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+}
+
+.body {
+  color: var(--text-primary, #1b1f23);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.focusTrap {
+  position: fixed;
+  top: 1px;
+  width: 1px;
+  width: 1px;
+  height: 0;
+  overflow: hidden;
+  outline: none;
+}

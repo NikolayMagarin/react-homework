@@ -1,7 +1,6 @@
 .reviewCard {
   display: flex;
   align-items: flex-start;
-  flex: 1;
 
   padding: 24px;
   gap: 32px;

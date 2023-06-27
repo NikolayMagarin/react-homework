@@ -39,7 +39,7 @@ export default function TicketCard({
         </div>
       </div>
 
-      <TicketButtons basket={basket} />
+      <TicketButtons basket={basket} filmId={filmId} />
     </div>
   );
 }

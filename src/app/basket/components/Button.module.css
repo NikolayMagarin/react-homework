@@ -1,0 +1,51 @@
+.button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+  margin: 0;
+  padding: 0 16px;
+
+  border: 0;
+  border-radius: 8px;
+
+  font-size: 14px;
+  line-height: 14px;
+  font-family: "Roboto";
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.button::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+}
+
+.button:hover::after {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.button:active::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.primary {
+  background-color: var(--orange, #f50);
+  color: var(--white, #fff);
+}
+
+.outline {
+  background-color: var(--white, #fff);
+  color: var(--orange, #f50);
+  box-shadow: inset 0 0 0 1px;
+}
